@@ -5,8 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tailwind Example</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .modal {
+            display: flex;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+        }
+        .close-btn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+
+
 </head>
 <body class="m-0 p-0">
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <p>
+            This website was built by me, but the design is based on a tutorial provided by
+            <a href="https://www.youtube.com/@JoshTriedCoding" target="_blank"><span class="text-blue-600">Josh Tried Coding</span></a> on YouTube.
+            You can check out his original tutorial and full code here:
+            <a href="https://youtu.be/SG82Aqcaaa0?si=13gHsENz9s_2GqoB" target="_blank">
+                <span class="text-blue-600">Build a Complete E-Commerce Shop with Next.js 14, Tailwind, React | Full Course 2024</span>
+            </a> and his
+            <a href="https://github.com/joschan21/casecobra" target="_blank"><span class="text-blue-600">GitHub project</span></a>.
+        </p>
+        <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+
+
     <nav class="sticky z-[100] h-14 inset-x-0 top-0 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all">
         <div class="h-full w-full mx-auto max-w-screen-3xl px-2.5 md:px-20">
             <div class="h-14 flex items-center justify-between">
@@ -19,7 +75,13 @@
                     <button class="bg-gray-100 p-2 rounded-md">Sign Up</button>
                     <button class="bg-green-600 p-2 text-white rounded-md">Create Case</button>
                 </div>
-            </div>
+            </div>    <div class="max-width-wrapper">
+        <div class="review-grid" id="reviewGrid">
+            <!-- Columns will be added by JavaScript -->
+            <div class="gradient-top"></div>
+            <div class="gradient-bottom"></div>
+        </div>
+    </div>
         </div>
     </nav>
 
@@ -231,18 +293,6 @@
         </div>
     </section>
 
-    <section>
-<!--################################################# -->
-<!--################################################# -->
-<!--################################################# -->
-<!--################################################# -->
-<!-- this is the section for the animated display -->
-<!--################################################# -->
-<!--################################################# -->
-<!--################################################# -->
-<!--################################################# -->
-    </section>
-
 <section class="pt-12">
 
           <div class='mb-12 px-6 lg:px-8'>
@@ -350,6 +400,11 @@
     </div>
     </footer>
 
+    <script>
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
